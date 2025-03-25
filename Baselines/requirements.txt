@@ -1,0 +1,19 @@
+# Core machine learning and data handling libraries
+torch
+transformers
+pandas
+numpy
+
+# PyTorch dataset and data loading utilities (included with torch, but listed for clarity)
+torch
+
+# Hugging Face ecosystem for acceleration and training
+accelerate
+
+# Weights & Biases for experiment tracking
+wandb
+
+# Evaluation metrics libraries
+evaluate
+rouge-score
+bert-score
