@@ -12,6 +12,7 @@ accelerate
 
 # Weights & Biases for experiment tracking
 wandb
+tqdm
 
 # Evaluation metrics libraries
 evaluate
