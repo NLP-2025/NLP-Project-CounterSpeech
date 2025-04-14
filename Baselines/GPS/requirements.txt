@@ -1,0 +1,9 @@
+nltk
+numpy
+torch
+torchtext
+torchvision
+tqdm
+transformers
+tensorflow
+tensorflow-hub
