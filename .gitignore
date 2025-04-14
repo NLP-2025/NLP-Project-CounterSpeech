@@ -1,1 +1,4 @@
 Baselines/DialoGPT/trainer_final_checkpoint
+Main_architectures/Cross Attention/HateBERT_cross_attention_final.pth
+Main_architectures/Shared Fusion/HateBERT_shared_fusion_final.pth
+Main_architectures/Linear Fusion/HateBERT_linear_fusion_final.pth
