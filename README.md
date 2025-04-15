@@ -1,27 +1,67 @@
-# NLP-Project-CounterSpeech Baselines using DialoGPT
+# NLP Project: CounterSpeech Baselines
 
-## Introduction
-This project fine-tunes Microsoft's DialoGPT-small model to generate counterspeech responses to hate speech. Using a custom dataset of hate speech and counterspeech pairs, the system leverages the Hugging Face `transformers` library, PyTorch, and various evaluation metrics (ROUGE, BERTScore) to train and assess the model's performance. The repository includes two main Jupyter notebooks: one for training the model and another for inference and evaluation. This README provides instructions for running the evaluation notebook (`eval.ipynb`), assumed to be located in a `Baselines` directory.
+This repository contains implementation of various models for generating counter-speech responses to harmful content. The project compares different architectural approaches against baseline models.
 
-## Prerequisites
-Before running the project, ensure the following are installed:
-- **Python**: Version 3.10 or higher
-- **Jupyter Notebook**: For running `.ipynb` files
-- **GPU (Optional)**: NVIDIA GPU with CUDA support for faster execution
-- **pip**: Python package manager
+## Models Implemented
 
-## Installation
-The project dependencies are listed in `requirements.txt`. See the Execution Instructions below for installation steps.
+### Baselines
+- **DialoGPT**: A standard dialogue generation model
+- **GPS**: Generative Pre-trained Speech model
 
-## Execution Instructions
-To run the evaluation notebook, follow these steps:
+### QUADRA Architecture Variants
+- **Linear Fusion**: Simple linear combination of features
+- **Cross Attention**: Cross-attention mechanism between features
+- **Shared Fusion**: Shared representation learning
 
+## How to Run
+
+### 1. DialoGPT Baseline
 ```bash
-cd Baselines
-pip install -r requirements.txt
-jupyter notebook eval.ipynb
+cd Baselines/DialoGPT
+run eval_submission.ipynb
 ```
 
-## Note
+### 2. GPS
+Run the GPS baseline evaluation notebooks in the Baselines/GPS directory.
 
-Loading the model and performing decoding operations require a significant amount of RAM. Ensure your system has sufficient memory available to avoid performance issues or crashes during execution.
+### 3. QUADRA Architectures
+
+#### A. Linear Fusion
+```bash
+cd Main_architectures/Linear\ Fusion
+run eval_linear_fusion.ipynb
+```
+
+#### B. Cross Fusion
+```bash
+cd Main_architectures/Cross\ Attention
+run eval_cross_attention.ipynb
+```
+
+#### C. Shared Fusion
+```bash
+cd Main_architectures/Shared\ Fusion
+run eval_shared_fusion.ipynb
+```
+
+## Results
+
+### Text Generation Metrics
+
+| Model | R1 | R2 | RL | M |
+|-------|-------|-------|-------|-------|
+| LinearFusion | 0.250 | 0.064 | 0.175 | 0.154 |
+| SharedFusion | 0.251 | 0.065 | 0.176 | 0.158 |
+| CrossFusion | 0.242 | 0.061 | 0.171 | 0.152 |
+| DialoGPT | 0.130 | 0.003 | 0.105 | 0.040 |
+| GPS | 0.176 | 0.030 | 0.132 | 0.116 |
+
+### Semantic Similarity and Classification Metrics
+
+| Model | BS(P) | BS(R) | BS(F1) | CA |
+|-------|-------|-------|--------|-------|
+| LinearFusion | 0.869 | 0.871 | 0.870 | 0.752 |
+| SharedFusion | 0.871 | 0.870 | 0.871 | 0.751 |
+| CrossFusion | 0.870 | 0.869 | 0.870 | 0.752 |
+| DialoGPT | 0.791 | 0.808 | 0.799 | 0.681 |
+| GPS | 0.240 | 0.121 | 0.180 | 0.754 |

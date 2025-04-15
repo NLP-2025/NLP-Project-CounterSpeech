@@ -1,20 +1,21 @@
-# Core machine learning and data handling libraries
+# Core ML Libraries
 torch
+torchvision
+torchtext
 transformers
-pandas
-numpy
-
-# PyTorch dataset and data loading utilities (included with torch, but listed for clarity)
-torch
-
-# Hugging Face ecosystem for acceleration and training
 accelerate
+tensorflow
+tensorflow-hub
 
-# Weights & Biases for experiment tracking
-wandb
-tqdm
-
-# Evaluation metrics libraries
-evaluate
+# NLP Libraries
+nltk
 rouge-score
 bert-score
+evaluate
+scikit-learn
+
+# Utilities
+tqdm
+wandb
+numpy
+pandas
