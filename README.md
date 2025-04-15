@@ -26,7 +26,11 @@ run eval_submission.ipynb
 ```
 
 ### 2. GPS
-Run the GPS baseline evaluation notebooks in the Baselines/GPS directory.
+Running this code will create a csv with the generated counterspeeches called final_responses.csv
+```
+cd Baselines/GPS
+python ./Main.py --dataset intentconanv2
+```
 
 ### 3. QUADRA Architectures
 
