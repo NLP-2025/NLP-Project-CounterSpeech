@@ -2,6 +2,10 @@
 
 This repository contains implementation of various models for generating counter-speech responses to harmful content. The project compares different architectural approaches against baseline models.
 
+## Abstract
+
+We explore intent-specific counterspeech generation to tackle hate speech online. Using the IntentCONAN v2 dataset—with 9,532 training examples balanced across four rhetorical intents (Informative, Denouncing, Questioning, and Positive)—we propose a modular framework with a shared HateBERT encoder and intent-specific BART decoders. We investigate three fusion mechanisms (Linear, Shared, and Cross Attention) to combine hate speech embeddings with intent representations. For evaluation, we introduce DialoRank, a zero-shot DialoGPT method that ranks responses by intent relevance. Results show our intent-aware models outperform DialoGPT and GPS baselines across lexical and semantic metrics, with SharedFusion achieving the best performance (ROUGE-1: 0.251, METEOR: 0.158, BERTScore F1: 0.871). Our findings highlight the effectiveness of intent conditioning for generating contextually appropriate and rhetorically impactful counterspeech.
+
 ## Models Implemented
 
 ### Baselines
@@ -65,3 +69,15 @@ run eval_shared_fusion.ipynb
 | CrossFusion | 0.870 | 0.869 | 0.870 | 0.752 |
 | DialoGPT | 0.791 | 0.808 | 0.799 | 0.681 |
 | GPS | 0.240 | 0.121 | 0.180 | 0.754 |
+
+## QUARC Model Implementation
+
+The implementation of the **QUARC** model is available at the official GitHub repository:
+
+🔗 [https://github.com/LCS2-IIITD/quarc-counterspeech](https://github.com/LCS2-IIITD/quarc-counterspeech)
+
+This model is introduced in the paper:
+
+**Counterspeeches up my sleeve! Intent Distribution Learning and Persistent Fusion for Intent-Conditioned Counterspeech Generation**  
+*Rishabh Gupta, Shaily Desai, Manvi Goel, Anil Bandhakavi, Tanmoy Chakraborty, and Md. Shad Akhtar*  
+📄 [arXiv:2305.13776](https://arxiv.org/abs/2305.13776)
