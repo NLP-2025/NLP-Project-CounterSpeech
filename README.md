@@ -81,3 +81,10 @@ This model is introduced in the paper:
 **Counterspeeches up my sleeve! Intent Distribution Learning and Persistent Fusion for Intent-Conditioned Counterspeech Generation**  
 *Rishabh Gupta, Shaily Desai, Manvi Goel, Anil Bandhakavi, Tanmoy Chakraborty, and Md. Shad Akhtar*  
 📄 [arXiv:2305.13776](https://arxiv.org/abs/2305.13776)
+
+
+## 🧠 Model Weights
+
+The pre-trained weights for all the models used in this project — including **DialoGPT FineTuned**, **Linear Fusion**, **Shared Fusion**, and **Cross Attention** — are available for download.
+
+📁 **Download here**: [Model Weights on Google Drive](https://drive.google.com/drive/folders/1rFA1at5oYa7uyDG3KWniPgkl2ZZlizVD?usp=sharing)
